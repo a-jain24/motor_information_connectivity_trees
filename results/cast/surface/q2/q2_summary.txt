@@ -1,0 +1,14 @@
+Q2 cast-induced disuse — bilateral M1 edge MI across pre/cast/post
+
+sub-cast1  (conditions: pre, cast, post)
+   MI L_M1_hand__R_M1_hand       pre=0.562  cast=0.475  post=0.581  <- casted limb (right hand → left M1)
+   MI L_M1_foot__R_M1_foot       pre=0.684  cast=0.504  post=0.465
+   MI L_M1_face__R_M1_face       pre=0.835  cast=0.761  post=0.772
+   CL-tree Jaccard vs pre: cast=0.38, post=0.38
+
+sub-cast2  (conditions: pre, cast, post)
+   MI L_M1_hand__R_M1_hand       pre=0.413  cast=0.299  post=0.410  <- casted limb (right hand → left M1)
+   MI L_M1_foot__R_M1_foot       pre=0.599  cast=0.476  post=0.453
+   MI L_M1_face__R_M1_face       pre=1.041  cast=1.096  post=0.962
+   CL-tree Jaccard vs pre: cast=0.42, post=0.48
+

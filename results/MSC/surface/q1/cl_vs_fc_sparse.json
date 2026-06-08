@@ -1,0 +1,86 @@
+{
+  "dataset": "MSC",
+  "n_subjects": 10,
+  "n_rois": 19,
+  "methods": {
+    "cl": {
+      "label": "Chow-Liu (MI MST)",
+      "conservation_jaccard_mean": 0.3533540091980872,
+      "conservation_jaccard_sd": 0.06818190610978091,
+      "canonical_edge_freq": {
+        "L_M1_hand__R_M1_hand": 1.0,
+        "L_M1_foot__R_M1_foot": 1.0,
+        "L_M1_face__R_M1_face": 1.0
+      },
+      "mean_edges": 18.0
+    },
+    "fc_mst": {
+      "label": "FC MST (|r|)",
+      "conservation_jaccard_mean": 0.3554709300916198,
+      "conservation_jaccard_sd": 0.07866667206365303,
+      "canonical_edge_freq": {
+        "L_M1_hand__R_M1_hand": 0.8,
+        "L_M1_foot__R_M1_foot": 1.0,
+        "L_M1_face__R_M1_face": 1.0
+      },
+      "mean_edges": 18.0
+    },
+    "pcorr_mst": {
+      "label": "Partial-corr MST",
+      "conservation_jaccard_mean": 0.32910698496905394,
+      "conservation_jaccard_sd": 0.06795236540466718,
+      "canonical_edge_freq": {
+        "L_M1_hand__R_M1_hand": 0.8,
+        "L_M1_foot__R_M1_foot": 1.0,
+        "L_M1_face__R_M1_face": 0.9
+      },
+      "mean_edges": 18.0
+    },
+    "glasso": {
+      "label": "Graphical LASSO",
+      "conservation_jaccard_mean": 0.4949786428572862,
+      "conservation_jaccard_sd": 0.27302641588576126,
+      "canonical_edge_freq": {
+        "L_M1_hand__R_M1_hand": 0.9,
+        "L_M1_foot__R_M1_foot": 1.0,
+        "L_M1_face__R_M1_face": 1.0
+      },
+      "mean_edges": 114.8
+    },
+    "fc_topn": {
+      "label": "FC top-(N-1)",
+      "conservation_jaccard_mean": 0.3833684392125171,
+      "conservation_jaccard_sd": 0.0931709480866802,
+      "canonical_edge_freq": {
+        "L_M1_hand__R_M1_hand": 0.8,
+        "L_M1_foot__R_M1_foot": 1.0,
+        "L_M1_face__R_M1_face": 1.0
+      },
+      "mean_edges": 18.0
+    }
+  },
+  "cl_vs_fcmst_edge_agreement_mean": 0.5895392433653303,
+  "cl_vs_fcmst_edge_agreement_sd": 0.0751569664086236,
+  "paired_vs_cl": {
+    "fc_mst": {
+      "delta_cl_minus_m": -0.0021169208935326034,
+      "t": -0.1684080579069537,
+      "p": 0.8670340301905418
+    },
+    "pcorr_mst": {
+      "delta_cl_minus_m": 0.024247024229033243,
+      "t": 1.8362237528288174,
+      "p": 0.07308694601654554
+    },
+    "glasso": {
+      "delta_cl_minus_m": -0.14162463365919903,
+      "t": -3.542620617906391,
+      "p": 0.0009517461408519593
+    },
+    "fc_topn": {
+      "delta_cl_minus_m": -0.030014430014429938,
+      "t": -2.5072837677303315,
+      "p": 0.015931694693309406
+    }
+  }
+}

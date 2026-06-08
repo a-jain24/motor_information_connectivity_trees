@@ -1,0 +1,14 @@
+Directness — MSC (surface), N=10
+
+A1 (partial correlation = linear directness):
+  mean |partial r|:  CL edges = 0.367  vs  excluded high-MI pairs = 0.113   (Δ=+0.254, p=6.09e-10)
+  excluded high-MI pairs at tree-distance 2 (transitive): 57%
+  mean |partial r| by method:  CL=0.367  FC-MST=0.390  pcorr-MST=0.414  FC-topN=0.371
+
+A2 (conditional MI = nonlinear directness):
+  fraction of MI explained away by the intermediary: excluded pairs = 0.38  vs  CL edges = 0.06  (Δ=+0.31, p=0.0413)
+
+Confirms directness if: CL edges have higher |partial r| than excluded high-MI pairs (A1),
+excluded pairs are mostly tree-transitive, and excluded pairs are explained away while CL
+edges survive conditioning (A2). If pcorr-MST ≥ CL on |partial r|, the linear-directness
+advantage is shared and CL's distinctive contribution is the nonlinear A2 result.

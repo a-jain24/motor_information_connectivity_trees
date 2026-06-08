@@ -1,0 +1,35 @@
+{
+  "dataset": "MSC",
+  "n_rois": 19,
+  "n_subjects": 10,
+  "roi_sizes": {
+    "L_M1_hand": 400.0,
+    "R_M1_hand": 400.0,
+    "L_M1_foot": 400.0,
+    "R_M1_foot": 400.0,
+    "L_M1_face": 400.0,
+    "R_M1_face": 400.0,
+    "L_Cereb_hand": 40.0,
+    "R_Cereb_hand": 40.0,
+    "L_Cereb_foot": 40.0,
+    "R_Cereb_foot": 40.0,
+    "L_Cereb_face": 40.0,
+    "R_Cereb_face": 40.0,
+    "SMA": 128.7,
+    "L_PMd": 76.6,
+    "R_PMd": 91.3,
+    "L_PMv": 108.7,
+    "R_PMv": 125.2,
+    "L_Thal": 19.3,
+    "R_Thal": 18.2
+  },
+  "size_vs_mi_spearman_r": -0.12992665713255416,
+  "size_vs_mi_p": 0.09031529945855951,
+  "confound_flag": false,
+  "cl_edge_jaccard_raw_vs_residualized": 1.0,
+  "canonical_edges_survive_residualization": {
+    "L_M1_hand__R_M1_hand": true,
+    "L_M1_foot__R_M1_foot": true,
+    "L_M1_face__R_M1_face": true
+  }
+}

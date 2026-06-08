@@ -1,0 +1,20 @@
+Q1 healthy conservation — MSC (surface), N=10 subjects, 19 ROIs
+
+CL inter-subject Jaccard:  0.353 ± 0.068
+FC top-18 Jaccard:       0.383 ± 0.093
+Δ (CL−FC) = -0.030   paired t(44)=-2.51, p=0.01593
+
+Consensus edges (≥50% of subjects):
+  L_M1_hand     — R_M1_hand      10/10
+  L_M1_foot     — R_M1_foot      10/10
+  L_M1_face     — R_M1_face      10/10
+  L_Thal        — R_Thal         10/10
+  L_Cereb_hand  — R_Cereb_hand   9/10
+  L_Cereb_face  — R_Cereb_face   9/10
+  L_Cereb_foot  — R_Cereb_foot   8/10
+  L_M1_face     — L_PMv          7/10
+  R_M1_face     — R_PMv          7/10
+  R_Cereb_foot  — R_Cereb_face   7/10
+  R_Cereb_hand  — R_Cereb_face   6/10
+  R_M1_hand     — R_PMd          5/10
+  L_PMd         — R_PMd          5/10

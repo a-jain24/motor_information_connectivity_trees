@@ -1,0 +1,7 @@
+Nonlinearity A1 — surrogate null, MSC (surface), N=10, 100 surrogates/type
+
+[gaussian] observed CL↔FC-MST agreement = 0.590  vs  surrogate 0.642   mean z=-0.53  Stouffer z=-1.66  (1/10 subjects below null p<.05)
+[phase ] observed CL↔FC-MST agreement = 0.590  vs  surrogate 0.633   mean z=-0.42  Stouffer z=-1.32  (1/10 subjects below null p<.05)
+
+Interpretation: observed << surrogate (negative z, many subjects below null) ⇒
+the CL≠FC-MST gap reflects genuine nonlinearity, not estimator noise.

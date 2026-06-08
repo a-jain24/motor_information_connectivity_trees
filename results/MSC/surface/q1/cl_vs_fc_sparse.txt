@@ -1,0 +1,16 @@
+CL vs FC-sparse networks — MSC (surface), N=10, 19 ROIs
+
+method                   cons.Jaccard   edges   canonical bilateral-M1 freq
+Chow-Liu (MI MST)      0.353±0.07    18.0   M1_hand:1.0 M1_foot:1.0 M1_face:1.0
+FC MST (|r|)           0.355±0.08    18.0   M1_hand:0.8 M1_foot:1.0 M1_face:1.0
+Partial-corr MST       0.329±0.07    18.0   M1_hand:0.8 M1_foot:1.0 M1_face:0.9
+Graphical LASSO        0.495±0.27   114.8   M1_hand:0.9 M1_foot:1.0 M1_face:1.0
+FC top-(N-1)           0.383±0.09    18.0   M1_hand:0.8 M1_foot:1.0 M1_face:1.0
+
+CL ≡ FC-MST per-subject edge agreement: 0.590 (1.0 ⇒ Gaussian/linear; <1 ⇒ MI adds nonlinear structure)
+
+Conservation, CL vs each (paired over subject pairs):
+  CL − FC MST (|r|)           Δ=-0.002  p=0.867
+  CL − Partial-corr MST       Δ=+0.024  p=0.0731
+  CL − Graphical LASSO        Δ=-0.142  p=0.000952
+  CL − FC top-(N-1)           Δ=-0.030  p=0.0159

@@ -1,0 +1,101 @@
+{
+  "sub-cast1": {
+    "subject": "sub-cast1",
+    "conditions": [
+      "pre",
+      "cast",
+      "post"
+    ],
+    "key_edge_mi": {
+      "L_M1_hand__R_M1_hand": {
+        "pre": 0.5622670816417363,
+        "cast": 0.475111390345013,
+        "post": 0.5807282009170902
+      },
+      "L_M1_foot__R_M1_foot": {
+        "pre": 0.6839204448242646,
+        "cast": 0.5041956810380357,
+        "post": 0.4651486631393654
+      },
+      "L_M1_face__R_M1_face": {
+        "pre": 0.8345732315898302,
+        "cast": 0.7612097146669659,
+        "post": 0.7720975814173779
+      }
+    },
+    "cl_jaccard_vs_pre": {
+      "pre_vs_cast": 0.38461538461538464,
+      "pre_vs_post": 0.38461538461538464
+    },
+    "roi_keys": [
+      "L_M1_hand",
+      "R_M1_hand",
+      "L_M1_foot",
+      "R_M1_foot",
+      "L_M1_face",
+      "R_M1_face",
+      "L_Cereb_hand",
+      "R_Cereb_hand",
+      "L_Cereb_foot",
+      "R_Cereb_foot",
+      "L_Cereb_face",
+      "R_Cereb_face",
+      "SMA",
+      "L_PMd",
+      "R_PMd",
+      "L_PMv",
+      "R_PMv",
+      "L_Thal",
+      "R_Thal"
+    ]
+  },
+  "sub-cast2": {
+    "subject": "sub-cast2",
+    "conditions": [
+      "pre",
+      "cast",
+      "post"
+    ],
+    "key_edge_mi": {
+      "L_M1_hand__R_M1_hand": {
+        "pre": 0.41268824755945865,
+        "cast": 0.2994938569474324,
+        "post": 0.4097587224768535
+      },
+      "L_M1_foot__R_M1_foot": {
+        "pre": 0.5989417167619315,
+        "cast": 0.4755419004021604,
+        "post": 0.45260597926566304
+      },
+      "L_M1_face__R_M1_face": {
+        "pre": 1.0413563162595008,
+        "cast": 1.096212808306461,
+        "post": 0.962419975258536
+      }
+    },
+    "cl_jaccard_vs_pre": {
+      "pre_vs_cast": 0.4166666666666667,
+      "pre_vs_post": 0.4782608695652174
+    },
+    "roi_keys": [
+      "L_M1_hand",
+      "R_M1_hand",
+      "L_M1_foot",
+      "R_M1_foot",
+      "L_M1_face",
+      "R_M1_face",
+      "L_Cereb_hand",
+      "R_Cereb_hand",
+      "L_Cereb_foot",
+      "R_Cereb_foot",
+      "L_Cereb_face",
+      "R_Cereb_face",
+      "SMA",
+      "L_PMd",
+      "R_PMd",
+      "L_PMv",
+      "R_PMv",
+      "L_Thal"
+    ]
+  }
+}

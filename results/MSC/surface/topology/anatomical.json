@@ -1,0 +1,90 @@
+{
+  "dataset": "MSC",
+  "n_subjects": 10,
+  "homologue_recovery": {
+    "cl": {
+      "per_edge": {
+        "L_M1_hand__R_M1_hand": 1.0,
+        "L_M1_foot__R_M1_foot": 1.0,
+        "L_M1_face__R_M1_face": 1.0,
+        "L_Cereb_hand__R_Cereb_hand": 0.9,
+        "L_Cereb_foot__R_Cereb_foot": 0.8,
+        "L_Cereb_face__R_Cereb_face": 0.9,
+        "L_PMd__R_PMd": 0.5,
+        "L_PMv__R_PMv": 0.1,
+        "L_Thal__R_Thal": 1.0
+      },
+      "mean": 0.8
+    },
+    "fc_mst": {
+      "per_edge": {
+        "L_M1_hand__R_M1_hand": 0.8,
+        "L_M1_foot__R_M1_foot": 1.0,
+        "L_M1_face__R_M1_face": 1.0,
+        "L_Cereb_hand__R_Cereb_hand": 0.8,
+        "L_Cereb_foot__R_Cereb_foot": 0.8,
+        "L_Cereb_face__R_Cereb_face": 1.0,
+        "L_PMd__R_PMd": 0.5,
+        "L_PMv__R_PMv": 0.1,
+        "L_Thal__R_Thal": 1.0
+      },
+      "mean": 0.7777777777777778
+    },
+    "pcorr_mst": {
+      "per_edge": {
+        "L_M1_hand__R_M1_hand": 0.8,
+        "L_M1_foot__R_M1_foot": 1.0,
+        "L_M1_face__R_M1_face": 0.9,
+        "L_Cereb_hand__R_Cereb_hand": 0.7,
+        "L_Cereb_foot__R_Cereb_foot": 0.8,
+        "L_Cereb_face__R_Cereb_face": 0.8,
+        "L_PMd__R_PMd": 0.4,
+        "L_PMv__R_PMv": 0.1,
+        "L_Thal__R_Thal": 1.0
+      },
+      "mean": 0.7222222222222222
+    },
+    "fc_topn": {
+      "per_edge": {
+        "L_M1_hand__R_M1_hand": 0.8,
+        "L_M1_foot__R_M1_foot": 1.0,
+        "L_M1_face__R_M1_face": 1.0,
+        "L_Cereb_hand__R_Cereb_hand": 0.8,
+        "L_Cereb_foot__R_Cereb_foot": 0.7,
+        "L_Cereb_face__R_Cereb_face": 1.0,
+        "L_PMd__R_PMd": 0.2,
+        "L_PMv__R_PMv": 0.5,
+        "L_Thal__R_Thal": 0.9
+      },
+      "mean": 0.7666666666666667
+    }
+  },
+  "crossed_corticocerebellar": {
+    "mi_crossed_mean": 0.3616883389151106,
+    "mi_ipsi_mean": 0.3541758287629352,
+    "mi_paired_t": 3.2640865211100705,
+    "mi_paired_p": 0.009774667132261619,
+    "edge_rate_by_method": {
+      "cl": {
+        "crossed_edge_rate": 0.05000000000000001,
+        "ipsi_edge_rate": 0.016666666666666666,
+        "crossed_minus_ipsi": 0.03333333333333334
+      },
+      "fc_mst": {
+        "crossed_edge_rate": 0.08333333333333333,
+        "ipsi_edge_rate": 0.06666666666666667,
+        "crossed_minus_ipsi": 0.016666666666666663
+      },
+      "pcorr_mst": {
+        "crossed_edge_rate": 0.18333333333333335,
+        "ipsi_edge_rate": 0.0,
+        "crossed_minus_ipsi": 0.18333333333333335
+      },
+      "fc_topn": {
+        "crossed_edge_rate": 0.03333333333333333,
+        "ipsi_edge_rate": 0.03333333333333333,
+        "crossed_minus_ipsi": 0.0
+      }
+    }
+  }
+}

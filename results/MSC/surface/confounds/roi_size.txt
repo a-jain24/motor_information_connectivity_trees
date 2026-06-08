@@ -1,0 +1,7 @@
+ROI-size confound — MSC (surface), 19 ROIs, N=10
+
+ROI sizes (mean grayordinates): L_M1_hand=400, R_M1_hand=400, L_M1_foot=400, R_M1_foot=400, L_M1_face=400, R_M1_face=400, L_Cereb_hand=40, R_Cereb_hand=40, L_Cereb_foot=40, R_Cereb_foot=40, L_Cereb_face=40, R_Cereb_face=40, SMA=128, L_PMd=76, R_PMd=91, L_PMv=108, R_PMv=125, L_Thal=19, R_Thal=18
+
+Spearman(geom-mean ROI size, group-mean MI) across 171 pairs: r=-0.130, p=0.0903  →  no strong confound
+CL edge-set Jaccard, raw vs size-residualized MI: 1.000 (18 edges)
+Canonical bilateral-M1 edges surviving residualization: M1_hand=yes, M1_foot=yes, M1_face=yes

@@ -1,0 +1,114 @@
+{
+  "subjects": [
+    "sub-MSC01",
+    "sub-MSC02",
+    "sub-MSC03",
+    "sub-MSC04",
+    "sub-MSC05",
+    "sub-MSC06",
+    "sub-MSC07",
+    "sub-MSC08",
+    "sub-MSC09",
+    "sub-MSC10"
+  ],
+  "n_subjects": 10,
+  "n_rois": 19,
+  "roi_keys": [
+    "L_M1_hand",
+    "R_M1_hand",
+    "L_M1_foot",
+    "R_M1_foot",
+    "L_M1_face",
+    "R_M1_face",
+    "L_Cereb_hand",
+    "R_Cereb_hand",
+    "L_Cereb_foot",
+    "R_Cereb_foot",
+    "L_Cereb_face",
+    "R_Cereb_face",
+    "SMA",
+    "L_PMd",
+    "R_PMd",
+    "L_PMv",
+    "R_PMv",
+    "L_Thal",
+    "R_Thal"
+  ],
+  "conservation": {
+    "n_pairs": 45,
+    "cl_jaccard_mean": 0.3533540091980872,
+    "cl_jaccard_sd": 0.06818190610978091,
+    "fc_jaccard_mean": 0.3833684392125171,
+    "fc_jaccard_sd": 0.0931709480866802,
+    "delta": -0.030014430014429938,
+    "t": -2.5072837677303315,
+    "p": 0.015931694693309406
+  },
+  "consensus_edges": [
+    [
+      "L_M1_hand",
+      "R_M1_hand",
+      1.0
+    ],
+    [
+      "L_M1_foot",
+      "R_M1_foot",
+      1.0
+    ],
+    [
+      "L_M1_face",
+      "R_M1_face",
+      1.0
+    ],
+    [
+      "L_Thal",
+      "R_Thal",
+      1.0
+    ],
+    [
+      "L_Cereb_hand",
+      "R_Cereb_hand",
+      0.9
+    ],
+    [
+      "L_Cereb_face",
+      "R_Cereb_face",
+      0.9
+    ],
+    [
+      "L_Cereb_foot",
+      "R_Cereb_foot",
+      0.8
+    ],
+    [
+      "L_M1_face",
+      "L_PMv",
+      0.7
+    ],
+    [
+      "R_M1_face",
+      "R_PMv",
+      0.7
+    ],
+    [
+      "R_Cereb_foot",
+      "R_Cereb_face",
+      0.7
+    ],
+    [
+      "R_Cereb_hand",
+      "R_Cereb_face",
+      0.6
+    ],
+    [
+      "R_M1_hand",
+      "R_PMd",
+      0.5
+    ],
+    [
+      "L_PMd",
+      "R_PMd",
+      0.5
+    ]
+  ]
+}

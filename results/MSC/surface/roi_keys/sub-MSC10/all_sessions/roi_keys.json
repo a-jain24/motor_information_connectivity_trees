@@ -1,0 +1,23 @@
+{
+  "roi_keys": [
+    "L_M1_hand",
+    "R_M1_hand",
+    "L_M1_foot",
+    "R_M1_foot",
+    "L_M1_face",
+    "R_M1_face",
+    "L_Cereb_hand",
+    "R_Cereb_hand",
+    "L_Cereb_foot",
+    "R_Cereb_foot",
+    "L_Cereb_face",
+    "R_Cereb_face",
+    "SMA",
+    "L_PMd",
+    "R_PMd",
+    "L_PMv",
+    "R_PMv",
+    "L_Thal",
+    "R_Thal"
+  ]
+}

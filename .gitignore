@@ -17,9 +17,8 @@ environment.local.yml
 nilearn_cache/
 .cache/
 
-# ── Data & outputs (never committed — referenced by config/datasets.yaml) ───
+# ── Data (never committed — referenced by config/datasets.yaml) ─────────────
 data/
-results/
 
 # Large imaging files anywhere
 *.nii
@@ -41,6 +40,14 @@ atlases/**
 !atlases/README.md
 !atlases/**/*.txt
 !atlases/**/*.tsv
+
+# ── Results: tracked in this repo, overriding the type rules above ──────────
+# Commit figures (*.png) and arrays (*.npy/*.npz) under results/.
+!results/**
+# ...but keep PDFs out: they duplicate the PNGs and are large (~49 MB).
+results/**/*.pdf
+# Exception: the q1 consensus tree has no PNG equivalent, so keep its PDF.
+!results/MSC/surface/q1/consensus_tree.pdf
 
 # ── OS cruft ──────────────────────────────────────────────────────────────
 .DS_Store

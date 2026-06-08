@@ -1,0 +1,18 @@
+Topology B1 — anatomical edge scorecard, MSC (surface), N=10
+
+1) Homologue recovery (mean consensus frequency over 9 bilateral pairs):
+     Chow-Liu (MI MST)      0.800
+     FC MST (|r|)           0.778
+     Partial-corr MST       0.722
+     FC top-(N-1)           0.767
+
+2) Crossed (contralateral) vs ipsilateral cortico-cerebellar coupling:
+     MI(crossed)=0.362  vs  MI(ipsi)=0.354  (paired t=3.26, p=0.00977)  [crossed = anatomically correct]
+     edge-presence rate, crossed vs ipsi:
+     Chow-Liu (MI MST)      crossed=0.05 ipsi=0.02  (Δ=+0.03)
+     FC MST (|r|)           crossed=0.08 ipsi=0.07  (Δ=+0.02)
+     Partial-corr MST       crossed=0.18 ipsi=0.00  (Δ=+0.18)
+     FC top-(N-1)           crossed=0.03 ipsi=0.03  (Δ=+0.00)
+
+Direct/anatomical topology supported if MI(crossed)>MI(ipsi) and methods place the
+crossed cortico-cerebellar edge more than the ipsilateral one (positive Δ).

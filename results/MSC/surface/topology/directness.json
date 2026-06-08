@@ -1,0 +1,31 @@
+{
+  "dataset": "MSC",
+  "n_subjects": 10,
+  "A1_partial_r_directness": {
+    "cl_vs_excluded": {
+      "mean_a": 0.36694044443426554,
+      "mean_b": 0.11326337729235617,
+      "delta": 0.2536770671419094,
+      "t": 27.12561110069748,
+      "p": 6.093315282618596e-10
+    },
+    "excluded_transitive_frac_mean": 0.5722222222222222,
+    "mean_pcorr_by_method": {
+      "cl": 0.36694044443426554,
+      "fc_mst": 0.3899314250417697,
+      "pcorr_mst": 0.4142762165594502,
+      "fc_topn": 0.3707017890531671
+    }
+  },
+  "A2_conditional_mi_directness": {
+    "excluded_explained_mean": 0.37563309794057986,
+    "cl_edge_explained_mean": 0.06350763810598027,
+    "paired": {
+      "mean_a": 0.37563309794057986,
+      "mean_b": 0.06350763810598027,
+      "delta": 0.3121254598345996,
+      "t": 2.37916276579255,
+      "p": 0.04128430709145058
+    }
+  }
+}
