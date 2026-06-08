@@ -1,0 +1,87 @@
+You are using fMRIPrep-25.0.0, and a newer version of fMRIPrep is available: 25.2.5.
+Please check out our documentation about how and when to upgrade:
+https://fmriprep.readthedocs.io/en/latest/faq.html#upgrading
+260608-01:08:57,581 nipype.workflow IMPORTANT:
+	 Running fMRIPrep version 25.0.0
+
+         License NOTICE ##################################################
+         fMRIPrep 25.0.0
+         Copyright The NiPreps Developers.
+         
+         This product includes software developed by
+         the NiPreps Community (https://nipreps.org/).
+         
+         Portions of this software were developed at the Department of
+         Psychology at Stanford University, Stanford, CA, US.
+         
+         This software is also distributed as a Docker container image.
+         The bootstrapping file for the image ("Dockerfile") is licensed
+         under the MIT License.
+         
+         This software may be distributed through an add-on package called
+         "Docker Wrapper" that is under the BSD 3-clause License.
+         #################################################################
+260608-01:09:01,948 nipype.workflow IMPORTANT:
+	 Building fMRIPrep's workflow:
+           * BIDS dataset path: /mfs/io/groups/dmello/projects/dynamric/fmri_connectivity_trees/datasets/perinatal_stroke.
+           * Participant list: ['CIMT001'].
+           * Run identifier: 20260608-010833_9cc5c242-5eb1-43cb-8422-f7eac2b7b2e0.
+           * Output spaces: MNI152NLin2009cAsym:res-native fsLR fsaverage:den-164k.
+           * Pre-run FreeSurfer's SUBJECTS_DIR: /mfs/io/groups/dmello/projects/dynamric/fmri_connectivity_trees/datasets/perinatal_stroke-fmriprep/sourcedata/freesurfer.
+Downloading https://templateflow.s3.amazonaws.com/tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_res-01_T1w.nii.gz
+  0%|          | 0.00/11.0M [00:00<?, ?B/s]  0%|          | 17.4k/11.0M [00:00<01:05, 168kB/s]  0%|          | 52.2k/11.0M [00:00<00:43, 255kB/s]  1%|          | 104k/11.0M [00:00<00:30, 353kB/s]   1%|▏         | 157k/11.0M [00:00<00:27, 401kB/s]  2%|▏         | 209k/11.0M [00:00<00:25, 431kB/s]  3%|▎         | 279k/11.0M [00:00<00:21, 500kB/s]  3%|▎         | 366k/11.0M [00:00<00:18, 591kB/s]  4%|▍         | 453k/11.0M [00:00<00:16, 659kB/s]  5%|▌         | 557k/11.0M [00:00<00:13, 750kB/s]  6%|▌         | 679k/11.0M [00:01<00:12, 860kB/s]  7%|▋         | 818k/11.0M [00:01<00:10, 984kB/s]  9%|▉         | 975k/11.0M [00:01<00:08, 1.12MB/s] 11%|█         | 1.17M/11.0M [00:01<00:07, 1.31MB/s] 13%|█▎        | 1.39M/11.0M [00:01<00:06, 1.53MB/s] 15%|█▍        | 1.64M/11.0M [00:01<00:05, 1.74MB/s] 18%|█▊        | 1.93M/11.0M [00:01<00:04, 2.03MB/s] 21%|██        | 2.26M/11.0M [00:01<00:03, 2.32MB/s] 24%|██▍       | 2.66M/11.0M [00:01<00:03, 2.71MB/s] 28%|██▊       | 3.12M/11.0M [00:02<00:02, 3.13MB/s] 33%|███▎      | 3.64M/11.0M [00:02<00:02, 3.62MB/s] 39%|███▊      | 4.25M/11.0M [00:02<00:01, 4.20MB/s] 45%|████▍     | 4.94M/11.0M [00:02<00:01, 4.84MB/s] 52%|█████▏    | 5.76M/11.0M [00:02<00:00, 5.62MB/s] 61%|██████    | 6.70M/11.0M [00:02<00:00, 6.50MB/s] 71%|███████   | 7.80M/11.0M [00:02<00:00, 7.54MB/s] 82%|████████▏ | 9.05M/11.0M [00:02<00:00, 8.84MB/s] 95%|█████████▌| 10.5M/11.0M [00:02<00:00, 10.2MB/s]100%|██████████| 11.0M/11.0M [00:02<00:00, 3.71MB/s]
+Downloading https://templateflow.s3.amazonaws.com/tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_res-01_desc-brain_mask.nii.gz
+  0%|          | 0.00/150k [00:00<?, ?B/s] 83%|████████▎ | 124k/150k [00:00<00:00, 1.07MB/s]100%|██████████| 150k/150k [00:00<00:00, 1.27MB/s]
+260608-01:09:11,612 nipype.workflow INFO:
+	 ANAT Stage 1: Adding template workflow
+260608-01:09:13,473 nipype.workflow INFO:
+	 ANAT Stage 2: Preparing brain extraction workflow
+260608-01:09:13,582 nipype.workflow INFO:
+	 ANAT Stage 3: Preparing segmentation workflow
+260608-01:09:13,587 nipype.workflow INFO:
+	 ANAT Stage 4: Preparing normalization workflow for ['MNI152NLin2009cAsym', 'MNI152NLin6Asym']
+260608-01:09:13,640 nipype.workflow INFO:
+	 ANAT Stage 5: Preparing surface reconstruction workflow
+260608-01:09:13,659 nipype.workflow INFO:
+	 ANAT Stage 6: Preparing mask refinement workflow
+260608-01:09:13,663 nipype.workflow INFO:
+	 ANAT Stage 7: Creating T2w template
+260608-01:09:13,667 nipype.workflow INFO:
+	 ANAT Stage 8: Creating GIFTI surfaces for ['white', 'pial', 'midthickness', 'sphere_reg', 'sphere']
+260608-01:09:13,683 nipype.workflow INFO:
+	 ANAT Stage 8: Creating GIFTI metrics for ['thickness', 'sulc']
+260608-01:09:13,690 nipype.workflow INFO:
+	 ANAT Stage 8a: Creating cortical ribbon mask
+260608-01:09:13,694 nipype.workflow INFO:
+	 ANAT Stage 9: Creating fsLR registration sphere
+260608-01:09:13,698 nipype.workflow INFO:
+	 ANAT Stage 10: Creating MSM-Sulc registration sphere
+Downloading https://templateflow.s3.amazonaws.com/tpl-fsLR/tpl-fsLR_hemi-L_den-32k_sphere.surf.gii
+  0%|          | 0.00/563k [00:00<?, ?B/s] 28%|██▊       | 157k/563k [00:00<00:00, 1.43MB/s]100%|██████████| 563k/563k [00:00<00:00, 3.72MB/s]
+Downloading https://templateflow.s3.amazonaws.com/tpl-fsLR/tpl-fsLR_hemi-R_den-32k_sphere.surf.gii
+  0%|          | 0.00/553k [00:00<?, ?B/s] 28%|██▊       | 157k/553k [00:00<00:00, 1.34MB/s]100%|██████████| 553k/553k [00:00<00:00, 3.47MB/s]
+Process Process-2:
+Traceback (most recent call last):
+  File "/opt/conda/envs/fmriprep/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/opt/conda/envs/fmriprep/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/conda/envs/fmriprep/lib/python3.12/site-packages/fmriprep/cli/workflow.py", line 126, in build_workflow
+    retval['workflow'] = init_fmriprep_wf()
+                         ^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/fmriprep/lib/python3.12/site-packages/fmriprep/workflows/base.py", line 95, in init_fmriprep_wf
+    single_subject_wf = init_single_subject_wf(subject_id)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/fmriprep/lib/python3.12/site-packages/fmriprep/workflows/base.py", line 554, in init_single_subject_wf
+    all_estimators, estimator_map = map_fieldmap_estimation(
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/fmriprep/lib/python3.12/site-packages/fmriprep/workflows/base.py", line 862, in map_fieldmap_estimation
+    fmap_estimators = find_estimators(
+                      ^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/fmriprep/lib/python3.12/site-packages/sdcflows/utils/wrangler.py", line 384, in find_estimators
+    fm.FieldmapFile(fmap.path, metadata=fmap.get_metadata())
+  File "<attrs generated init sdcflows.fieldmaps.FieldmapFile>", line 11, in __init__
+    __attr_validator_path(self, __attr_path, self.path)
+  File "/opt/conda/envs/fmriprep/lib/python3.12/site-packages/sdcflows/fieldmaps.py", line 205, in check_path
+    raise FileNotFoundError(
+FileNotFoundError: File path </mfs/io/groups/dmello/projects/dynamric/fmri_connectivity_trees/datasets/perinatal_stroke/sub-CIMT001/ses-39992/fmap/sub-CIMT001_ses-39992_run-01_phasediff.nii.gz> does not exist, is a broken link, or it is not a file

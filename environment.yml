@@ -1,0 +1,40 @@
+# Cross-platform conda environment for motor_information_connectivity_trees.
+#
+# Deliberately uses major-version-only pins (no exact build strings) so it
+# solves on the Linux cluster — unlike the osx-arm64 export it replaces.
+#
+#   conda env create -f environment.yml
+#   conda activate dynamric
+#   pip install -e .            # installs the `mict` package (editable)
+#
+# Surface tooling notes:
+#   - connectome-workbench provides `wb_command` for reading/parcellating/
+#     smoothing the existing fs_LR_32k dtseries (MSC + cast are already
+#     processed; we only read).
+#   - ciftify / fMRIPrep / FreeSurfer are needed ONLY for PS1 preprocessing
+#     and are best provided as cluster modules or containers, not conda pkgs.
+name: dynamric
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - scipy
+  - scikit-learn
+  - scikit-image          # watershed (Gordon-style parcellation refinement)
+  - networkx
+  - pandas
+  - matplotlib
+  - nibabel               # CIFTI-2 / GIFTI I/O
+  - nilearn
+  - h5py                  # WU geodesic distance matrices (MATLAB v7.3 / HDF5)
+  - pyyaml
+  - pytest
+  - connectome-workbench  # wb_command: cifti parcellate / smooth / metric ops
+  # GPU MI acceleration (optional; the numpy MI path is the default).
+  # On the cluster, install the CUDA build explicitly, e.g.:
+  #   - pytorch
+  #   - pytorch-cuda=12.1   (from the pytorch/nvidia channels)
+  - pip
+  - pip:
+      - -e .

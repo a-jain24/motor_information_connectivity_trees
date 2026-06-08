@@ -1,0 +1,9 @@
+{
+  "t1w": {"datatype": "anat", "session": "38659", "suffix": "T1w"},
+  "t2w": {"datatype": "anat", "session": "38659", "suffix": "T2w"},
+  "roi": {"datatype": "anat", "session": "38659", "suffix": "roi"},
+  "bold": {"datatype": "func", "suffix": "bold",
+           "session": ["00000", "0001", "38659", "38660", "38719", "38780", "38781", "38834", "38835"]},
+  "fmap": {"datatype": "fmap",
+           "session": ["00000", "0001", "38659", "38660", "38719", "38780", "38781", "38834", "38835"]}
+}

@@ -1,0 +1,35 @@
+# Atlas file locations. Cortex is parcellated on the fs_LR_32k surface;
+# cerebellum (SUIT) and thalamus (Morel) are carried as CIFTI subcortical-volume
+# structures.
+#
+# Status legend:  on_disk = present and usable;  fetch = must be obtained.
+
+cortex:
+  glasser_fslr_dlabel:
+    status: fetch
+    # HCP-MMP1 (Glasser 2016) on fs_LR_32k as a .dlabel.nii.
+    # Source: BALSA / templateflow tpl-fsLR / neuromaps. Record path once fetched.
+    path: null
+  glasser_volumetric_ref:
+    status: on_disk
+    # Volumetric HCP-MMP1 (MNI152 ICBM2009a) — reference only; not used for surface ROIs.
+    path: /mfs/io/groups/dmello/projects/dynamric/fmri_connectivity_trees/atlases/glasser/HCP-MMP1_on_MNI152_ICBM2009a_nlin.nii.gz
+  fslr_surfaces:
+    status: on_disk
+    # Per-subject fs_LR_32k surfaces ship inside the WU surface_pipeline
+    # (MSC: {subject}/fs_LR_Talairach/fsaverage_LR32k; cast: {subject}/fs_LR_Talairach).
+    # A group fs_LR_32k mesh is also available here:
+    group_mesh: /mfs/io/groups/dmello/software/freesurfer/surf_resliceFS2WB/standard_mesh/resample_fsaverage
+
+cerebellum:
+  suit_anatom:
+    status: on_disk
+    # SUIT atl-Anatom, MNI, 2 mm — resample to the CIFTI subcortical grid.
+    path: /mfs/io/groups/dmello/projects/egcerebellum/code/connectivity/correlation/parcellations/atl-Anatom_space-MNI_dseg_resamplespace-MNINLin2009cAsym_res-2.nii
+    motor_lobules_local: [0, 1, 5, 6, 20, 21]   # IV/V, VI, VIII (0-based in 34-parcel set)
+
+thalamus:
+  morel:
+    status: on_disk
+    path: /mfs/io/groups/dmello/projects/dynamric/fmri_connectivity_trees/atlases/MorelAtlasMNI152
+    motor_nuclei: [VLa, VLpd, VLpv, VAmc, VApc]   # motor relay (inter-effector / Morel)

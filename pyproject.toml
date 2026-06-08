@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mict"
+version = "0.1.0"
+description = "Motor-system Chow-Liu tree vs functional connectivity analysis across MSC, cast-induced plasticity, and perinatal stroke."
+requires-python = ">=3.11"
+readme = "README.md"
+dependencies = [
+    "numpy",
+    "scipy",
+    "scikit-learn",
+    "scikit-image",
+    "networkx",
+    "pandas",
+    "matplotlib",
+    "nibabel",
+    "nilearn",
+    "h5py",
+    "pyyaml",
+]
+
+[project.optional-dependencies]
+# torch is used only to GPU-accelerate MI; the numpy path is the default and
+# is exercised by the test suite, so torch is optional.
+torch = ["torch"]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"

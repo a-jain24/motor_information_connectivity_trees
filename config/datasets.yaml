@@ -1,0 +1,90 @@
+# Dataset roots, acquisition params, and derivative locations.
+# All paths are resolved relative to the repo's data/ symlinks (see data/),
+# which point at the on-disk locations verified 2026-06-04.
+#
+# Spaces:
+#   surface  = fs_LR_32k grayordinates (PRIMARY; the literature space)
+#   volume   = MNI152NLin2009cAsym (OPTIONAL deferred cross-check)
+
+primary_space: surface
+
+# External tools (not on the default login PATH).
+tools:
+  wb_command: /mfs/io/groups/dmello/software/connectome-workbench/bin_rh_linux64/wb_command
+
+datasets:
+
+  MSC:
+    # 10 subjects, 10 sessions each, TR 2.2 s. WU/Gordon surface pipeline
+    # already on disk (rest dtseries, surface motor contrasts, individual
+    # gradient-watershed parcellation, fs_LR surfaces, precomputed geodesics).
+    # BIDS sub-* form matches the on-disk surface_pipeline dirs + file prefixes.
+    subjects: [sub-MSC01, sub-MSC02, sub-MSC03, sub-MSC04, sub-MSC05,
+               sub-MSC06, sub-MSC07, sub-MSC08, sub-MSC09, sub-MSC10]
+    sessions: [func01, func02, func03, func04, func05, func06, func07, func08, func09, func10]
+    tr: 2.2
+    surface:
+      ready: true                       # no preprocessing needed
+      root: data/msc_surface_pipeline   # .../ds000224/derivatives/surface_pipeline
+      rest_glob: "{subject}/processed_restingstate_timecourses/{session}/cifti"
+      task_glob: "{subject}/task_timecourses/{session}"
+      motor_contrasts: "{subject}/task_contrasts_cifti/motor/{subject}-motor_contrasts_32k_fsLR.dscalar.nii"
+      parcellation: "{subject}/surface_parcellation/{subject}_parcels.dtseries.nii"
+      parcel_networks: "{subject}/surface_parcellation/{subject}_parcel_networks.dscalar.nii"
+      surfaces: "{subject}/fs_LR_Talairach/fsaverage_LR32k"
+      distances: "{subject}/cifti_distances"
+      registration: fs_LR_32k_Talairach   # 711-2B
+    volume:
+      ready: true
+      root: data/msc_fmriprep_volume
+      space: MNI152NLin2009cAsym
+      glm_zmaps: data/msc_firstLevel_glm   # volumetric first-level GLM z-maps
+
+  cast:
+    # cast1=MSC02, cast2=MSC06, cast3=new. WU/Newbold surface pipeline native.
+    # cast1: Trio TR 2.2; cast2/3: Prisma TR 1.1. Conditions: pre / cast / post.
+    subjects: [sub-cast1, sub-cast2, sub-cast3]
+    tr: {sub-cast1: 2.2, sub-cast2: 1.1, sub-cast3: 1.1}
+    conditions: [pre, cast, post]
+    # session -> condition map (raw BIDS); content fetched on demand from OpenNeuro
+    # ds002766 s3-PUBLIC via `git-annex get` (annex pointers until fetched).
+    sessions_tsv: "data/cast_induced_plasticity/{subject}/{subject}_sessions.tsv"
+    # cast1=MSC02, cast2=MSC06 — same brain → reuse the MSC ROI masks (identical
+    # fs_LR_32k grayordinate space). cast3 is a new subject (own parcellation; no
+    # precomputed motor contrasts → ROI definition deferred).
+    roi_source:
+      sub-cast1: {dataset: MSC, subject: sub-MSC02}
+      sub-cast2: {dataset: MSC, subject: sub-MSC06}
+    surface:
+      ready: true
+      root: data/cast_induced_plasticity/derivatives/surface
+      rest_glob: "{subject}/processed_restingstate_timecourses/{session}/cifti"
+      task_glob: "{subject}/task_timecourses"
+      parcellation: "{subject}/surface_parcellation/{subject}_parcels.dtseries.nii"
+      parcel_networks: "{subject}/surface_parcellation/{subject}_parcel_networks.dscalar.nii"
+      surfaces: "{subject}/fs_LR_Talairach"
+      registration: fs_LR_32k_Talairach
+    volume:
+      ready: true
+      root: data/cast_induced_plasticity/derivatives/volume
+      space: Talairach_711-2B            # NOTE: not MNI — resample for vol cross-check
+
+  perinatal_stroke:
+    # PS1 = sub-CIMT001. RAW BIDS only — the single preprocessing job.
+    # 56 task-motor + 64 task-rest runs, 60 fieldmaps, T1w+T2w, DWI.
+    # ~18 sessions over ~500 days; ses-IDs are day-count style (ses-39809 ...).
+    subjects: [sub-CIMT001]
+    tr: 2.2
+    raw_root: data/perinatal_stroke
+    bilateral_lesion: true               # see motor_system_plan.md — displaced ROIs
+    surface:
+      ready: false                       # produce via make_grayordinates.py (PS1 only)
+      target: data/perinatal_stroke/derivatives/surface
+      registration: fs_LR_32k
+    notes: >
+      Preferred: run the lab WU/Gordon surface pipeline for an identical
+      layout/space to MSC+cast. Else fMRIPrep
+      --output-spaces fsLR --cifti-output 91k (recon-all included),
+      resampling subcortex to match. Reserve DWI for the Q3 corticospinal
+      cross-check. Search whole surviving cortex for PS1 effector peaks
+      (representations are displaced — do NOT constrain anatomically).

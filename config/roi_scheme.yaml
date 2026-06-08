@@ -1,0 +1,55 @@
+# The motor ROI scheme. Labels are IDENTICAL across datasets and spaces so that
+# CL trees / FC matrices are directly comparable (motor_system_plan.md §Coherence).
+#
+# Target = the 18-ROI scheme from motor_system_plan.md.
+# The legacy 11-ROI GCSS scheme (6_2_2026_report.md §5.2) is the cortical subset;
+# `tongue` there == `M1_face` here. Thalamus + cerebellum nodes are new (§D/§E).
+#
+# method  : how the ROI is defined (motor_system_plan.md §A/§C/§D/§E)
+# space   : surface (cortex, fs_LR_32k) | volume (subcortex, CIFTI structures)
+
+# 19 nodes: bilateral for every region except medial SMA (motor_system_plan.md §ROI Set
+# enumerates M1 hand/foot/face, PMd, PMv, Thal, and Cereb hand/foot/face bilaterally + SMA;
+# the plan's "~18 ROIs" is approximate). 19 nodes → an 18-edge CL tree.
+n_target: 19
+
+rois:
+  # ── Primary motor effectors — task peak + 400-vertex expansion (Newbold, §A) ──
+  - {label: L_M1_hand,  region: M1,  effector: hand, hemi: L, space: surface, method: task_peak_expand}
+  - {label: R_M1_hand,  region: M1,  effector: hand, hemi: R, space: surface, method: task_peak_expand}
+  - {label: L_M1_foot,  region: M1,  effector: foot, hemi: L, space: surface, method: task_peak_expand}
+  - {label: R_M1_foot,  region: M1,  effector: foot, hemi: R, space: surface, method: task_peak_expand}
+  - {label: L_M1_face,  region: M1,  effector: face, hemi: L, space: surface, method: task_peak_expand, alias: L_M1_tongue}
+  - {label: R_M1_face,  region: M1,  effector: face, hemi: R, space: surface, method: task_peak_expand, alias: R_M1_tongue}
+
+  # ── Premotor / SMA — Gordon gradient-watershed + Infomap network parcel (§C) ──
+  - {label: SMA,        region: SMA, effector: all,  hemi: M, space: surface, method: network_parcel}
+  - {label: L_PMd,      region: PMd, effector: all,  hemi: L, space: surface, method: network_parcel}
+  - {label: R_PMd,      region: PMd, effector: all,  hemi: R, space: surface, method: network_parcel}
+  - {label: L_PMv,      region: PMv, effector: all,  hemi: L, space: surface, method: network_parcel}
+  - {label: R_PMv,      region: PMv, effector: all,  hemi: R, space: surface, method: network_parcel}
+
+  # ── Motor thalamus — FC-seed + 95th-pct threshold + Morel labeling (§D) ──────
+  - {label: L_Thal,     region: Thal, effector: motor, hemi: L, space: volume, method: fc_seed}
+  - {label: R_Thal,     region: Thal, effector: motor, hemi: R, space: volume, method: fc_seed}
+
+  # ── Cerebellar effectors — task peak + 40-voxel expansion (Newbold, §E) ──────
+  - {label: L_Cereb_hand, region: Cereb, effector: hand, hemi: L, space: volume, method: task_peak_expand}
+  - {label: R_Cereb_hand, region: Cereb, effector: hand, hemi: R, space: volume, method: task_peak_expand}
+  - {label: L_Cereb_foot, region: Cereb, effector: foot, hemi: L, space: volume, method: task_peak_expand}
+  - {label: R_Cereb_foot, region: Cereb, effector: foot, hemi: R, space: volume, method: task_peak_expand}
+  - {label: L_Cereb_face, region: Cereb, effector: face, hemi: L, space: volume, method: task_peak_expand}
+  - {label: R_Cereb_face, region: Cereb, effector: face, hemi: R, space: volume, method: task_peak_expand}
+
+expansion:
+  cortex_n_vertices: 400      # Newbold 2020
+  cerebellum_n_voxels: 40     # Newbold 2020
+
+# Expected healthy somatotopy (MNI mm) for QC — motor_system_plan.md §A/§E.
+expected_centroids_mni:
+  M1_foot:  [5, -25, 68]
+  M1_hand:  [38, -22, 58]
+  M1_face:  [56, -6, 28]
+  Cereb_foot: [5, -60, -20]
+  Cereb_hand: [25, -58, -25]
+  Cereb_face: [20, -55, -28]
